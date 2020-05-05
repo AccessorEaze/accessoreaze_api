@@ -40,4 +40,10 @@ app.use('*', function(req, res){
   res.send('Not Found', 404);
 });
 
+// Handle 404 - Keep this as a last route
+app.use(function(req, res, next) {
+  res.status(404);
+  res.send('404: File Not Found');
+});
+
 module.exports = app;

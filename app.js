@@ -35,4 +35,9 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+//The 404 Route (ALWAYS Keep this as the last route)
+app.use('*', function(req, res){
+  res.send('Not Found', 404);
+});
+
 module.exports = app;

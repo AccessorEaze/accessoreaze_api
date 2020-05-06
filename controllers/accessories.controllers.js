@@ -1,11 +1,11 @@
 const Accessory = require("../models/accessory.models");
 
 exports.search = (req, res) => {
-    if (!req.params || !req.params.type || !req.params.model) {
-        res.send({});
+    if (!req.params || !req.params.type || !req.params.device) {
+        res.send([]);
         return;
     }
-    Accessory.search(req.params.type, req.params.model, (err, data) => {
+    Accessory.search(req.params.type, req.params.device, (err, data) => {
         if (err) {
             if (err.kind === "not_found") {
                 res.status(404).send({

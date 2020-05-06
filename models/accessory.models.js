@@ -28,7 +28,6 @@ Accessory.search = (type, device, result) => {
         }
         result({kind: "not_found"}, null);
     });
-
 };
 
 module.exports = Accessory;

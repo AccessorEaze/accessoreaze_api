@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var accessoriesRouter = require('./routes/accessories');
+var phonesRouter = require('./routes/phones');
 
 var app = express();
 
@@ -19,6 +20,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/accessories', accessoriesRouter);
+app.use('/phones', phonesRouter);
 
 // error handler
 app.use(function(err, req, res, next) {

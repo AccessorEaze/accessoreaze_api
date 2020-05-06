@@ -3,6 +3,6 @@ var router = express.Router();
 
 const classes = require("../controllers/accessories.controllers.js");
 
-router.get('/search/:type/:model', classes.search);
+router.get('/search/:type/:device', classes.search);
 
 module.exports = router;

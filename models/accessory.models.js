@@ -16,7 +16,7 @@ Accessory.search = (type, device, result) => {
     if (!device) {
         device = "%";
     }
-    var query = sql.query("SELECT * FROM `accessories` WHERE `accessories`.`type` LIKE (SELECT `accessory_type`.`type_id` FROM `accessory_type` WHERE type LIKE " +sql.escape(type.toUpperCase()) + ") AND `device` LIKE " + sql.escape("%" + device + "%") + ";", (err, res) => {
+    var query = sql.query("SELECT * FROM `accessories` WHERE `accessories`.`type_id` LIKE (SELECT `accessory_type`.`type_id` FROM `accessory_type` WHERE type LIKE " +sql.escape(type.toUpperCase()) + ") AND `device` LIKE " + sql.escape("%" + device + "%") + ";", (err, res) => {
         if (err) {
             console.log("error: ", err);
             result(err, null);

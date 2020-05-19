@@ -20,7 +20,7 @@ Phones.list = (result) => {
 };
 
 Phones.modelSearch = (model, result) => {
-    var query = sql.query("SELECT * FROM `phones` WHERE `model` LIKE '" + sql.escape(model) + "';", (err, res) => {
+    var query = sql.query("SELECT * FROM `phones` WHERE `model` LIKE " + sql.escape(model) + ";", (err, res) => {
         if (err) {
             console.log("error: ", err);
             result(err, null);

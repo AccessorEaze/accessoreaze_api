@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 var accessoriesRouter = require('./routes/accessories');
 var phonesRouter = require('./routes/phones');
+var accountRouter = require('./routes/account');
 
 var app = express();
 
@@ -21,6 +22,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/accessories', accessoriesRouter);
 app.use('/phones', phonesRouter);
+app.use('/account', accountRouter);
 
 // error handler
 app.use(function(err, req, res, next) {
